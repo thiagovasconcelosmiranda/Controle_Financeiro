@@ -1,0 +1,5 @@
+5432
+Financeiro_db
+postgres
+egdtccma
+localhost

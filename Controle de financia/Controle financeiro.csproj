@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{47DEF405-3D1F-43C7-89F8-BCDFB0695533}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Controle_de_financia2</RootNamespace>
+    <AssemblyName>Controle de financia2</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>financa.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.6.2\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.1.72\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.5, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.5\lib\net461\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=10.0.0.5, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.10.0.5\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1652.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1652.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=6.0.11.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.6.0.11\lib\netstandard2.0\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.6.1\lib\net462\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.6.0.0\lib\net461\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.6.0.0\lib\net461\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipelines, Version=10.0.0.5, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.10.0.5\lib\net462\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.6.3\lib\net462\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.6.1\lib\net462\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.1.2\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=10.0.0.5, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.10.0.5\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=10.0.0.5, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.10.0.5\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Channels, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Channels.6.0.0\lib\net461\System.Threading.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.6.3\lib\net462\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChartCalculoGasto.cs" />
+    <Compile Include="ComponentText.cs" />
+    <Compile Include="Cotacao.cs" />
+    <Compile Include="CotacaoApi.cs" />
+    <Compile Include="Debtor.cs" />
+    <Compile Include="DebtorsDb.cs" />
+    <Compile Include="finaceiro_dbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>finaceiro_dbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="finaceiro_dbDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>finaceiro_dbDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FormAlertMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAlertMessage.Designer.cs">
+      <DependentUpon>FormAlertMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdicionarDevedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdicionarDevedores.Designer.cs">
+      <DependentUpon>FormAdicionarDevedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAlterarDbConection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAlterarDbConection.Designer.cs">
+      <DependentUpon>FormAlterarDbConection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAlterarDevedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAlterarDevedores.Designer.cs">
+      <DependentUpon>FormAlterarDevedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAlterarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAlterarUsuario.Designer.cs">
+      <DependentUpon>FormAlterarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Auth.cs" />
+    <Compile Include="AuthDB.cs" />
+    <Compile Include="Components.cs" />
+    <Compile Include="FluxoConta.cs" />
+    <Compile Include="FluxoContaDb.cs" />
+    <Compile Include="FormAlterFluxoConta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAlterFluxoConta.Designer.cs">
+      <DependentUpon>FormAlterFluxoConta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAlterPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAlterPassword.Designer.cs">
+      <DependentUpon>FormAlterPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAniversario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAniversario.Designer.cs">
+      <DependentUpon>FormAniversario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddConection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddConection.Designer.cs">
+      <DependentUpon>FormAddConection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListaDevedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListaDevedores.Designer.cs">
+      <DependentUpon>FormListaDevedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModalDescricaoProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModalDescricaoProduto.Designer.cs">
+      <DependentUpon>FormModalDescricaoProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRespostaSecreta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRespostaSecreta.Designer.cs">
+      <DependentUpon>FormRespostaSecreta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListaContas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListaContas.Designer.cs">
+      <DependentUpon>FormListaContas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNovoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNovoUsuario.Designer.cs">
+      <DependentUpon>FormNovoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Globais.cs" />
+    <Compile Include="Conection.cs" />
+    <Compile Include="DbConection.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FormAdicionarContas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdicionarContas.Designer.cs">
+      <DependentUpon>FormAdicionarContas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\FormRelatorioDevedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\FormRelatorioDevedores.Designer.cs">
+      <DependentUpon>FormRelatorioDevedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\FormRelatorioContas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\FormRelatorioContas.Designer.cs">
+      <DependentUpon>FormRelatorioContas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoundedGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RoundedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="User.cs" />
+    <Compile Include="UserDb.cs" />
+    <Compile Include="WhorkDb.cs" />
+    <Compile Include="Work.cs" />
+    <EmbeddedResource Include="FormAlertMessage.resx">
+      <DependentUpon>FormAlertMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdicionarDevedores.resx">
+      <DependentUpon>FormAdicionarDevedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAlterarDbConection.resx">
+      <DependentUpon>FormAlterarDbConection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAlterarDevedores.resx">
+      <DependentUpon>FormAlterarDevedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAlterarUsuario.resx">
+      <DependentUpon>FormAlterarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAlterFluxoConta.resx">
+      <DependentUpon>FormAlterFluxoConta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAlterPassword.resx">
+      <DependentUpon>FormAlterPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAniversario.resx">
+      <DependentUpon>FormAniversario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddConection.resx">
+      <DependentUpon>FormAddConection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListaDevedores.resx">
+      <DependentUpon>FormListaDevedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModalDescricaoProduto.resx">
+      <DependentUpon>FormModalDescricaoProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRespostaSecreta.resx">
+      <DependentUpon>FormRespostaSecreta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListaContas.resx">
+      <DependentUpon>FormListaContas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNovoUsuario.resx">
+      <DependentUpon>FormNovoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="FormAdicionarContas.resx">
+      <DependentUpon>FormAdicionarContas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FormRelatorioDevedores.resx">
+      <DependentUpon>FormRelatorioDevedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FormRelatorioContas.resx">
+      <DependentUpon>FormRelatorioContas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\RelContas.rdlc" />
+    <EmbeddedResource Include="Relatorios\RelDevedores.rdlc" />
+    <EmbeddedResource Include="RoundedGroupBox.resx">
+      <DependentUpon>RoundedGroupBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="finaceiro_dbDataSet.xsc">
+      <DependentUpon>finaceiro_dbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="finaceiro_dbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>finaceiro_dbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="finaceiro_dbDataSet.xss">
+      <DependentUpon>finaceiro_dbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="finaceiro_dbDataSet1.xsc">
+      <DependentUpon>finaceiro_dbDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="finaceiro_dbDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>finaceiro_dbDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="finaceiro_dbDataSet1.xss">
+      <DependentUpon>finaceiro_dbDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagem _financia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart-graph-data-for-business-finance-free-photo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\17233017_2008.i301.001_personal_data_protection_gdpr_isometric_icons-07.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\o-email.png" />
+    <None Include="Resources\ideia.png" />
+    <None Include="Resources\cadeado.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\report.png" />
+    <None Include="Resources\online-survey.png" />
+    <None Include="Resources\list %281%29.png" />
+    <None Include="Resources\list.png" />
+    <None Include="Resources\data-analysis.png" />
+    <None Include="Resources\financeiro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-up-dollar-banknote.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\to-do-list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check-list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aniversario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\47df9cd57893cebe710ee4babc8dd89f.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5ad847c407aa2661ab13d886fcb7087a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="financa.ico" />
+    <None Include="Resources\descricao.png" />
+    <None Include="Resources\olho %281%29.png" />
+    <None Include="Resources\olho.png" />
+    <None Include="Resources\polegares-para-baixo.png" />
+    <None Include="Resources\polegar-para-cima.png" />
+    <None Include="Resources\pdf3.png" />
+    <None Include="Resources\pdf2.png" />
+    <None Include="Resources\pdf1.png" />
+    <None Include="Resources\pdf.png" />
+    <None Include="Resources\upload.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets" Condition="Exists('..\packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets'))" />
+  </Target>
+</Project>
